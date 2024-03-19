@@ -24,7 +24,7 @@
 
   
 
-  <title>Vue | Cieray</title>
+  <title>Vue基础入门 | Cieray</title>
 
   
 
@@ -104,7 +104,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Vue</h1>
+          <h1 class="title-wrap">Vue基础入门</h1>
           <h2 class="title-sub-wrap">
             <strong>cieray</strong>
             <span>发布于</span>
@@ -112,7 +112,7 @@
           </h2>
           
           
-            <h2 id="/ovoCieray/ovoCieray.github.io/2024/03/19/Vue/" class="title-sub-wrap leancloud_visitors" data-flag-title="Vue">
+            <h2 id="/ovoCieray/ovoCieray.github.io/2024/03/19/Vue/" class="title-sub-wrap leancloud_visitors" data-flag-title="Vue基础入门">
               <em>文章访问量</em>
               <i class="leancloud-visitors-count"></i>
             </h2>
@@ -146,13 +146,28 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>v-text：文本（固定） 插值表达式**</p>
-<p>v-bind： 一般简写为:src绑定属性值</p>
-<p>v-on：事件修饰符，一般简写为@click，@dbclick，还有@keyup.enter监听键盘的回车事件</p>
+        <p>创建Vue实例，初始化渲染<br>1.准备容器<br>2.引包（包含完整的警告调试）&#x2F;生产版本（删除警告进行压缩）<br>3.创建实例<br>4.添加配置项&#x3D;&gt;完成渲染</p>
+<div id="app"></div>
+
+<script src="https://cdn.jsdeliver.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+<pre><code>const app = new Vue(&#123;
+    el:&#39;#app&#39;,
+    data: &#123;
+        message:&quot;hello Cieray&quot;
+    &#125;
+&#125;)
+</code></pre>
+<p>数据的像是处理：数据变化，视图自动更新</p>
+<p>v-text：文本（固定） 插值表达式</p>
+<p>v-html：可以解析HTML</p>
+<p>v-bind： 绑定设置属性，一般简写为:src绑定各个属性值</p>
+<p>v-on：事件修饰符，一般简写为@click，@dbclick，还有@keyup.enter监听键盘的回车事件，一般会指定一个方法</p>
 <p>v-model：绑定数据，快速设置获取表单元素的值</p>
-<p>v-show：修改元素的display:none  v-if：修改dom元素</p>
+<p>v-show：增加&#x2F;修改一个属性元素的display:none  v-if：修改dom元素</p>
 <p>​	经常隐藏显示元素用v-show，v-if操纵dom元素比较复杂耗时</p>
-<p>v-for：列表关联（item，index in arr），与数据绑定，数据改变样式改变</p>
+<p>v-for：列表关联（item，index in arr），与数据绑定，数据改变样式改变<br>v-if：</p>
+<h2 id="构建用户界面的渐进式框架：基于数据动态渲染页面"><a href="#构建用户界面的渐进式框架：基于数据动态渲染页面" class="headerlink" title="构建用户界面的渐进式框架：基于数据动态渲染页面"></a>构建用户界面的渐进式框架：基于数据动态渲染页面</h2><p>声明式渲染————&gt;组件系统————&gt;客户端路由VueRouter————&gt;大规模状态管理Vuex————&gt;构建工具Webpack&#x2F;Vite</p>
 
       </section>
 
@@ -166,7 +181,7 @@
     <div class="card-text">
       
         <a href="/ovoCieray/ovoCieray.github.io/2024/03/19/axios/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">axios</h2>
+          <h2 class="card-text--title text-ellipsis">axios常用入门</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
