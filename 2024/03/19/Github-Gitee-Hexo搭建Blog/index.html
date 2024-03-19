@@ -29,7 +29,7 @@
   
 
   
-    <link rel="shortcut icon" href="/ovoCieray/ovoCieray.github.io/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
   
 
   <!--mathjax latex数学公式显示支持-->
@@ -44,7 +44,7 @@
   
 
   
-<link rel="stylesheet" href="/ovoCieray/ovoCieray.github.io/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
@@ -61,7 +61,7 @@
   <div class="navbar-content">
     <!-- logo -->
     <div class="navbar-logo">
-      <a href="/ovoCieray/ovoCieray.github.io/">
+      <a href="/">
         
           Cieray
         
@@ -76,11 +76,11 @@
       </div>
       <ul class="navbar-list">
         
-          <li class="navbar-list-item"><a href="/ovoCieray/ovoCieray.github.io/">首页</a></li>
+          <li class="navbar-list-item"><a href="/">首页</a></li>
         
-          <li class="navbar-list-item"><a href="/ovoCieray/ovoCieray.github.io/links">友链</a></li>
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
         
-          <li class="navbar-list-item"><a href="/ovoCieray/ovoCieray.github.io/about">关于</a></li>
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
         
       </ul>
     </div>
@@ -117,7 +117,7 @@
             </h2>
           
           
-            <h2 id="/ovoCieray/ovoCieray.github.io/2024/03/19/Github-Gitee-Hexo%E6%90%AD%E5%BB%BABlog/" class="title-sub-wrap leancloud_visitors" data-flag-title="Github+Gitee+Hexo（Vscode+Typora）搭建Blog">
+            <h2 id="/2024/03/19/Github-Gitee-Hexo%E6%90%AD%E5%BB%BABlog/" class="title-sub-wrap leancloud_visitors" data-flag-title="Github+Gitee+Hexo（Vscode+Typora）搭建Blog">
               <em>文章访问量</em>
               <i class="leancloud-visitors-count"></i>
             </h2>
@@ -127,7 +127,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/ovoCieray/ovoCieray.github.io/tags/%E6%B2%A1%E6%9C%89%E5%9B%BE%EF%BC%8C%E5%A4%AA%E6%87%92%E4%BA%86/">🏷️ 没有图，太懒了</a></li>
+    <li><a href="/tags/%E6%B2%A1%E6%9C%89%E5%9B%BE%EF%BC%8C%E5%A4%AA%E6%87%92%E4%BA%86/">🏷️ 没有图，太懒了</a></li>
   
 </ul>
         </div>
@@ -153,129 +153,137 @@
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <p>Hexo嘛，用md写博客，markdown可太简单了（如果不干别的样式或者复杂的东西，毕竟它比学语言什么的简单多了）</p>
 <p>我是先看的gitee的搭建，结果发现Gitee Pages的渲染只能手动点更新页面才能部署，就还是搭回去GitHub了，试了下同时部署两个地方，似乎不太成功Orz</p>
-<p><a href="https://blog.csdn.net/weixin_45631738/article/details/104716374">https://blog.csdn.net/weixin_45631738/article/details/104716374</a><br>
-Gitee的搭建是看的这个，就是里面推的sakura主题不太好改来用，已经不支持直接单下主题theme了，人家要求全覆盖，我还不会弄，很多功能都想删了结果库库报错QAQ</p>
-<h6 id="下载Node-js">下载Node.js</h6>
-<p>官网<a href="https://nodejs.org/en/">Node.js (nodejs.org)</a>，我搜到的都说下LTS的长稳版，current下了你就是小白鼠嘻嘻</p>
+<p><a href="https://blog.csdn.net/weixin_45631738/article/details/104716374">https://blog.csdn.net/weixin_45631738/article/details/104716374</a><br>Gitee的搭建是看的这个，就是里面推的sakura主题不太好改来用，已经不支持直接单下主题theme了，人家要求全覆盖，我还不会弄，很多功能都想删了结果库库报错QAQ</p>
+<h6 id="下载Node-js"><a href="#下载Node-js" class="headerlink" title="下载Node.js"></a>下载Node.js</h6><p>官网<a href="https://nodejs.org/en/">Node.js (nodejs.org)</a>，我搜到的都说下LTS的长稳版，current下了你就是小白鼠嘻嘻</p>
 <p>win+r然后cmd进去输一下node -v，出来版本号就说明装过了，报错就没装，有问题复制一下报错搜一下基本都能解决</p>
 <p>我一般都不下到C盘，都是装在D盘，下之前新建个文件夹写下nodejs这样自己知道是啥</p>
 <p>配置环境</p>
 <p>在安装的文件夹【D:\Develop\nodejs】下创建两个文件夹【node_global】及【node_cache】</p>
 <p>创建完两个空文件夹之后，打开cmd命令窗口，输入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;D:\Develop\nodejs\node_global&quot;</span><br><span class="line">npm config set cache &quot;D:\Develop\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
+
 <p>把后面下依赖包什么的全局和缓存地址改到D盘去，不然默认就在C盘了</p>
 <p>直接在开始菜单旁边的搜索里输环境或者系统什么的，就会出来【编辑系统环境变量】，然后就【高级】-【环境变量】</p>
 <p>在【系统变量】下新建【NODE_PATH】，输入【D:\Develop\nodejs\node_global\node_modules】</p>
 <p>将【用户变量】下的【Path】修改为【D:\Develop\nodejs\node_global】，跟前面对应的。改完就可以了</p>
-<h6 id="下载Git">下载Git</h6>
-<p>官网<a href="https://git-scm.com/download/win">Git - Downloading Package (git-scm.com)</a>，下win64的我反正的</p>
+<h6 id="下载Git"><a href="#下载Git" class="headerlink" title="下载Git"></a>下载Git</h6><p>官网<a href="https://git-scm.com/download/win">Git - Downloading Package (git-scm.com)</a>，下win64的我反正的</p>
 <p>但是官网下载太慢了，我估计我这网络肯定得下载好几天呢，可能大家也是，于是我找到阿里镜像</p>
-<p>下载最新版的Git，利用阿里镜像会下载的很快<br>
-<a href="https://npm.taobao.org/mirrors/git-for-windows/">https://npm.taobao.org/mirrors/git-for-windows/</a></p>
+<p>下载最新版的Git，利用阿里镜像会下载的很快<br><a href="https://npm.taobao.org/mirrors/git-for-windows/">https://npm.taobao.org/mirrors/git-for-windows/</a></p>
 <p>网上教程很多，也需要去环境变量看一眼，easy啦~</p>
-<h6 id="安装Hexo">安装Hexo</h6>
-<p>去d或者e盘建个新文件夹进去cmd，有的人可能没管理权限容易报错，建议以管理员身份运行cmd</p>
+<h6 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h6><p>去d或者e盘建个新文件夹进去cmd，有的人可能没管理权限容易报错，建议以管理员身份运行cmd</p>
 <p>npm在你装node的时候就给你装好了，这是在用npm初始化一个hexo-cli的脚手架，类比vue-cli一样，就是一个笼统的框架</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
 <p>输入hexo 按回车，出现help 就说明安装成功，你要觉得博客装的不好，比如主题删的都在飘红（没错就是我）想重弄，直接删了整个文件夹从这一步重新开始好了，反正很快（前提是你不心疼你的写了很多的博客）</p>
 <p>推荐再装个vscode，很好下，下一步下一步就完事了</p>
-<h6 id="初始化项目">初始化项目</h6>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<h6 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+
 <p>blog是博客名字可以改，你取个myblog啥的也行，这还是本地的</p>
 <p>下好了之后blog里就有一堆文件了，就是框架，可以测试一下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>就是清一下已存在的hexo网站文件，generate生产，save保存，现在都是本地的静态页面，出现【<a href="http://localhost:4000">http://localhost:4000</a>】就ok了</p>
-<h6 id="改主题（可选）">改主题（可选）</h6>
-<p>然后可以去改个主题折腾一下，官网<a href="https://hexo.io/themes/%E9%9A%8F%E4%BE%BF%E9%A2%84%E8%A7%88%E4%B8%80%E4%B8%8B%EF%BC%8C%E5%96%9C%E6%AC%A2%E5%93%AA%E4%B8%AA%E5%B0%B1%E5%A4%A7%E6%A6%82%E7%9C%8B%E4%B8%80%E4%B8%8B%EF%BC%8C%E6%9C%80%E5%A5%BD%E6%98%AF%E8%AF%B4%E7%9B%B4%E6%8E%A5%E6%94%BE%E5%9C%A8%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84themes%E6%96%87%E4%BB%B6%E5%A4%B9%E9%87%8C%E5%B0%B1%E8%A1%8C%E7%9A%84%EF%BC%8C%E6%95%B4%E4%B8%AA%E6%96%87%E4%BB%B6%E5%AF%BC%E7%9A%84%E5%B0%B1%E7%AE%97%E4%BA%86%EF%BC%8C%E4%BC%9A%E6%94%B9%E7%9A%84%E5%B4%A9%E6%BA%83%E7%84%B6%E5%90%8E%E9%87%8D%E6%9D%A5%E7%9A%84%EF%BC%88%E6%AF%94%E5%A6%82%E6%88%91%EF%BC%89">https://hexo.io/themes/随便预览一下，喜欢哪个就大概看一下，最好是说直接放在根目录的themes文件夹里就行的，整个文件导的就算了，会改的崩溃然后重来的（比如我）</a></p>
+
+<p>就是清一下已存在的hexo网站文件，generate生产，save保存，现在都是本地的静态页面，出现【<a href="http://localhost:4000】就ok了">http://localhost:4000】就ok了</a></p>
+<h6 id="改主题（可选）"><a href="#改主题（可选）" class="headerlink" title="改主题（可选）"></a>改主题（可选）</h6><p>然后可以去改个主题折腾一下，官网<a href="https://hexo.io/themes/%E9%9A%8F%E4%BE%BF%E9%A2%84%E8%A7%88%E4%B8%80%E4%B8%8B%EF%BC%8C%E5%96%9C%E6%AC%A2%E5%93%AA%E4%B8%AA%E5%B0%B1%E5%A4%A7%E6%A6%82%E7%9C%8B%E4%B8%80%E4%B8%8B%EF%BC%8C%E6%9C%80%E5%A5%BD%E6%98%AF%E8%AF%B4%E7%9B%B4%E6%8E%A5%E6%94%BE%E5%9C%A8%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84themes%E6%96%87%E4%BB%B6%E5%A4%B9%E9%87%8C%E5%B0%B1%E8%A1%8C%E7%9A%84%EF%BC%8C%E6%95%B4%E4%B8%AA%E6%96%87%E4%BB%B6%E5%AF%BC%E7%9A%84%E5%B0%B1%E7%AE%97%E4%BA%86%EF%BC%8C%E4%BC%9A%E6%94%B9%E7%9A%84%E5%B4%A9%E6%BA%83%E7%84%B6%E5%90%8E%E9%87%8D%E6%9D%A5%E7%9A%84%EF%BC%88%E6%AF%94%E5%A6%82%E6%88%91%EF%BC%89">https://hexo.io/themes/随便预览一下，喜欢哪个就大概看一下，最好是说直接放在根目录的themes文件夹里就行的，整个文件导的就算了，会改的崩溃然后重来的（比如我）</a></p>
 <p>如果你要改主题用模板，一般都是下载下来放到themes里，比如我下的flexblock，文件夹下下来就是themes\flexblock，然后flexblock里一堆主题有关的文件</p>
-<h6 id="改仓库配置">改仓库配置</h6>
-<p>如果你用了别人的主题，就要在【blog】的博客文件下跟source、themes、node_modules同一级的【_config.yml】配置文件最后一点</p>
+<h6 id="改仓库配置"><a href="#改仓库配置" class="headerlink" title="改仓库配置"></a>改仓库配置</h6><p>如果你用了别人的主题，就要在【blog】的博客文件下跟source、themes、node_modules同一级的【_config.yml】配置文件最后一点</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: flexblock</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        github: git@github.com:ovoCieray/ovoCieray.github.io.git</span><br><span class="line">        gitee: git@gitee.com:ovoCieray/ovoCieray.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: </span><br></pre></td></tr></table></figure>
+
 <p>把theme：lanscape改为theme：flexblock（你下的主题名字，文件夹也得叫这个名字，不换主题就不用管，只填地址就好了）</p>
 <p>然后配置你的博客github或者gitee仓库地址，就在最后的Deployment里，本来很空，只有个type，你得把地址repo加进去，上面是github和gitee的，也能推成功，但是gitee上的没太部署好，主题是错的，github上的很正常，我用两个仓库一套公钥想一次性推但是没成功QAQ</p>
 <p>建议单独配一个</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:ovoCieray/ovoCieray.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: </span><br></pre></td></tr></table></figure>
+
 <p>也可以这样，如果只有一个地址，也可以写url，都是从仓库克隆过来的，下面讲</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/ovoCieray/ovoCieray.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: </span><br></pre></td></tr></table></figure>
+
 <p>如果是单独码云就是</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/ovoCieray/ovoCieray.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: https://ovocieray.gitee.io/</span><br></pre></td></tr></table></figure>
-<h6 id="配置Gitee仓库">配置Gitee仓库</h6>
-<p>需要注册码云<a href="https://gitee.com/%E7%9A%84%E8%B4%A6%E5%8F%B7%EF%BC%8C%E7%84%B6%E5%90%8E%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93">https://gitee.com/的账号，然后创建一个仓库</a></p>
+
+<h6 id="配置Gitee仓库"><a href="#配置Gitee仓库" class="headerlink" title="配置Gitee仓库"></a>配置Gitee仓库</h6><p>需要注册码云<a href="https://gitee.com/%E7%9A%84%E8%B4%A6%E5%8F%B7%EF%BC%8C%E7%84%B6%E5%90%8E%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93">https://gitee.com/的账号，然后创建一个仓库</a></p>
 <p>仓库名称，使用语言(JavaScript)，访问权限(公开)</p>
 <p>！！！仓库名一定要跟你的账户名一样！！！</p>
-<p>比如我账户ovoCieray，仓库名就也叫ovoCieray，没多的加的，跟github不一样，然后就可以去仓库，很显眼的黄色克隆/下载按钮，用https就可以了，后面点一下可以直接复制<a href="https://gitee.com/ovoCieray/ovoCieray.git%E7%84%B6%E5%90%8E%E5%86%99%E8%BF%9Brepo%E9%87%8C%E3%80%82%E4%B8%BB%E9%A2%98%E6%A8%A1%E6%9D%BF%E5%8F%AF%E4%BB%A5%E5%90%8E%E9%9D%A2%E6%94%B9%EF%BC%8C%E5%85%88%E5%8E%BB%E9%85%8D%E4%B8%80%E4%B8%8Bgitee%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%8C%E4%B8%8D%E7%84%B6%E4%BD%A0%E5%B0%B1%E5%8F%AA%E6%9C%89%E6%9C%AC%E5%9C%B0%E7%9A%84">https://gitee.com/ovoCieray/ovoCieray.git然后写进repo里。主题模板可以后面改，先去配一下gitee的远程仓库，不然你就只有本地的</a></p>
+<p>比如我账户ovoCieray，仓库名就也叫ovoCieray，没多的加的，跟github不一样，然后就可以去仓库，很显眼的黄色克隆&#x2F;下载按钮，用https就可以了，后面点一下可以直接复制<a href="https://gitee.com/ovoCieray/ovoCieray.git%E7%84%B6%E5%90%8E%E5%86%99%E8%BF%9Brepo%E9%87%8C%E3%80%82%E4%B8%BB%E9%A2%98%E6%A8%A1%E6%9D%BF%E5%8F%AF%E4%BB%A5%E5%90%8E%E9%9D%A2%E6%94%B9%EF%BC%8C%E5%85%88%E5%8E%BB%E9%85%8D%E4%B8%80%E4%B8%8Bgitee%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%8C%E4%B8%8D%E7%84%B6%E4%BD%A0%E5%B0%B1%E5%8F%AA%E6%9C%89%E6%9C%AC%E5%9C%B0%E7%9A%84">https://gitee.com/ovoCieray/ovoCieray.git然后写进repo里。主题模板可以后面改，先去配一下gitee的远程仓库，不然你就只有本地的</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line">hexo g --d #合起来也行</span><br></pre></td></tr></table></figure>
+
 <p>此时会弹出对话框让我们输入码云的用户名和密码，我们输完以后，就会开始上传，在本地文件夹中会多出来.deploy_git文件夹（上传的是此文件夹下的内容，也就是生成的网站文件，另外我们本地编译生成的html 文件保存在public文件夹下）</p>
 <p>登录码云账户，打开和自己用户名相同的仓库观察，如果出现和.deploy_git或者public文件夹下的文件就证明文件上传成功</p>
-<h6 id="看这里！！！这一节的gitee是想和github一起配做的，也是本地仓库链接远程，不做也可以单独码云的话">看这里！！！这一节的gitee是想和github一起配做的，也是本地仓库链接远程，不做也可以单独码云的话</h6>
-<p>码云很贴心的告诉你推送东西进仓库的时候要是没有权限就要执行命令配置name和email，照着复制就行</p>
+<h6 id="看这里！！！这一节的gitee是想和github一起配做的，也是本地仓库链接远程，不做也可以单独码云的话"><a href="#看这里！！！这一节的gitee是想和github一起配做的，也是本地仓库链接远程，不做也可以单独码云的话" class="headerlink" title="看这里！！！这一节的gitee是想和github一起配做的，也是本地仓库链接远程，不做也可以单独码云的话"></a>看这里！！！这一节的gitee是想和github一起配做的，也是本地仓库链接远程，不做也可以单独码云的话</h6><p>码云很贴心的告诉你推送东西进仓库的时候要是没有权限就要执行命令配置name和email，照着复制就行</p>
 <p>下面那个账号密码也是，复制粘贴进blog的cmd界面或者vscode的终端</p>
 <p>如果提示git无效命令就在本地项目目录中，打开终端或命令提示符，导航到项目所在的目录。也就是在blog的文件夹里右键打开cmd用git，如果没有右键cmd就只能导航了，而且还是最好管理员权限运行</p>
 <p>初始化本地 Git 仓库。运行以下命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
 <p>然后存所有的到本地仓库</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
 <p>提交更改到本地 Git 仓库。运行以下命令并添加提交消息：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;提交消息&quot;</span><br></pre></td></tr></table></figure>
-<p>将本地关联远程，url就是仓库那儿的克隆/下载的地址，比如我的<a href="https://gitee.com/ovoCieray/ovoCieray.git">https://gitee.com/ovoCieray/ovoCieray.git</a></p>
+
+<p>将本地关联远程，url就是仓库那儿的克隆&#x2F;下载的地址，比如我的<a href="https://gitee.com/ovoCieray/ovoCieray.git">https://gitee.com/ovoCieray/ovoCieray.git</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;GITEE_REPOSITORY_URL&gt;</span><br></pre></td></tr></table></figure>
+
 <p>然后</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
 <p>同样需要跟上面一样填账户和密码，或者访问令牌</p>
-<h6 id="开启Pages">开启Pages</h6>
-<p>以上，代码传上去了，没域名能看到博客的效果</p>
+<h6 id="开启Pages"><a href="#开启Pages" class="headerlink" title="开启Pages"></a>开启Pages</h6><p>以上，代码传上去了，没域名能看到博客的效果</p>
 <p>所以需要开启Gitee的Pages功能，不然看不到页面的，你要访问的博客页面就得开Pages，这个是免费的，但是会要先申请一下权限我记得</p>
-<p>进入码云的仓库，克隆/下载按钮上面有一排，代码、issue什么的，最后一个是管理，点击倒数第二个服务，出来的第一个就是Gitee Pages，点击进行开启，分支默认是master，也不用点别的，直接点击更新就行，然后部署分支上面就会出来一行字：</p>
+<p>进入码云的仓库，克隆&#x2F;下载按钮上面有一排，代码、issue什么的，最后一个是管理，点击倒数第二个服务，出来的第一个就是Gitee Pages，点击进行开启，分支默认是master，也不用点别的，直接点击更新就行，然后部署分支上面就会出来一行字：</p>
 <p>已开启Gitee Pages服务，网站地址：<a href="https://ovocieray.gitee.io/">Hexo (gitee.io)</a></p>
 <p>这就是你的域名，点进去就能看到跟本地博客一样的布局</p>
 <p>不过Gitee的缺点就是你每次在本地写完hexo g然后hexo d，只是推送到仓库了，部署还得来Pages页面点更新才有效果，不然更新的页面是不变的</p>
-<h6 id="链接Github仓库">链接Github仓库</h6>
-<p>所以我还是又想着把博客部署回GitHub</p>
+<h6 id="链接Github仓库"><a href="#链接Github仓库" class="headerlink" title="链接Github仓库"></a>链接Github仓库</h6><p>所以我还是又想着把博客部署回GitHub</p>
 <p>首先要建一个仓库：</p>
 <p>进git网页，右上角加号【new repository】，我没重建不知道有没有漏掉啥啊</p>
 <p>我选的public，但我没加readme，其实应该要加的，我当时是用的【important repository】从gitee导仓库过去的，因为我先搭的gitee，【Your old repository’s clone URL</p>
 <p>*】就可以把Gitee的克隆https那个url输进去导入</p>
-<p>！！！注意Repository <a href="http://xn--namecieray-9o0q.github.io">name写cieray.github.io</a>，<a href="http://xn--github-9m7iw92a54up38h.io">一定要加github.io</a>，无论你是导入还是自己建</p>
+<p>！！！注意Repository name写cieray.github.io，一定要加github.io，无论你是导入还是自己建</p>
 <p>我还是选的public，private感觉博客用不着，然后就是进仓库，跟Gitee同样的位置有个绿色的code，https一般就够了，ssh是为了公钥私钥配一下本地好推，一般也都会配一下</p>
-<h6 id="SSH配置仓库密钥">SSH配置仓库密钥</h6>
-<p><a href="https://blog.csdn.net/weixin_43772810/article/details/120320100">Git入门——使用ssh协议上传代码_git使用ssh上传-CSDN博客</a></p>
+<h6 id="SSH配置仓库密钥"><a href="#SSH配置仓库密钥" class="headerlink" title="SSH配置仓库密钥"></a>SSH配置仓库密钥</h6><p><a href="https://blog.csdn.net/weixin_43772810/article/details/120320100">Git入门——使用ssh协议上传代码_git使用ssh上传-CSDN博客</a></p>
 <p><a href="https://gitcode.csdn.net/65b7297cb8e5f01e1e459a66.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTc0NTkyMiwiZXhwIjoxNzExNDcyNjA0LCJpYXQiOjE3MTA4Njc4MDQsInVzZXJuYW1lIjoibTBfNTU2NDc3ODYifQ.AwTJsfFDcczuxTZngjPhVDXdyS2n4MaahpfI7NlZe-c">【SSH拉取代码】使用SSH克隆代码那些事_我是不贪嘴吖-GitCode 开源社区 (csdn.net)</a></p>
 <p>参考了这两篇</p>
 <p>依旧win+r（直接搜索框输cmd回车也可以）,cmd</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh/</span><br></pre></td></tr></table></figure>
+
 <p>主要是看你的用户（admin）文件夹里有没有.ssh，一般是【C:\Users\cieray】，就在桌面、音乐、下载、图片什么的那个主文件夹，找到【.ssh】，实在没有就建一个，C盘都要管理员权限不出意外的话，报错先找这个原因</p>
 <p>继续执行命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name “XXXX”</span><br><span class="line">git config --global user.email “XXXX@qq.com”</span><br></pre></td></tr></table></figure>
+
 <p>【注意：以上两个命令是自己登陆git时的账号与邮箱】</p>
 <p>继续执行命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C “XXXX@qq.com”</span><br></pre></td></tr></table></figure>
+
 <p>大家一般都写git的登陆邮箱</p>
 <p>找到【.ssh】文件，发现里面有两个文件：【id_rsa】和【id_rsa.pub】</p>
 <p>打开【id_rsa.pub】复制到git的SSH，就在仓库点自己右上角的头像，进设置【settings】，找到【SSH and GPG keys】，然后【New SSH key】，粘贴【id_rsa.pub】复制的东西点Add SSH key就可以了</p>
 <p>回到cmd测试ssh，输入</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br></pre></td></tr></table></figure>
+
 <p>会有</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi ovoCieray(@ovoCieray)! You&#x27;ve successfully authenticated, but GITEE.COM does not provide shell access.</span><br></pre></td></tr></table></figure>
+
 <p>就配好了，以后就不用老输密码了</p>
-<h6 id="把同一套SSH公钥粘到Gitee">把同一套SSH公钥粘到Gitee</h6>
-<p>这是我搜同步部署出来的，目前有点问题但好像也不算很大（如果也不是非要码云部署好Orz）</p>
+<h6 id="把同一套SSH公钥粘到Gitee"><a href="#把同一套SSH公钥粘到Gitee" class="headerlink" title="把同一套SSH公钥粘到Gitee"></a>把同一套SSH公钥粘到Gitee</h6><p>这是我搜同步部署出来的，目前有点问题但好像也不算很大（如果也不是非要码云部署好Orz）</p>
 <p>【id_rsa.pub】这个不是公钥嘛，同样去gitee的设置里，找到SSH公钥，粘进去！没错，我干的，这样推两个就没报错了（乐）</p>
 <p>还记得我的repo嘛</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">        github: git@github.com:ovoCieray/ovoCieray.github.io.git</span><br><span class="line">        gitee: git@gitee.com:ovoCieray/ovoCieray.git</span><br><span class="line">  branch: master</span><br><span class="line">  message: </span><br></pre></td></tr></table></figure>
+
 <p>这两就是SSH的方法</p>
 <p><a href="https://www.jianshu.com/p/79bd6fb15790">Hexo同时部署在GitHub、Coding、Gitee - 简书 (jianshu.com)</a></p>
 <p>勉强算参考了下这个吧</p>
 <p>还有一点，看这里！！！那一节git init了一下在blog里，这个本地git仓库初始化后会有一个隐藏的【.git】文件夹，可以在文件管理器上面点查看，然后显示隐藏的项目就能看到了，进去【.git】，有hook，info，logs，objects，refs文件夹，还有个config配置也在这一级目录，打开进去，一般只有</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	url = git@github.com:ovoCieray/ovoCieray.github.io.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br></pre></td></tr></table></figure>
+
 <p>我们把gitee的url加进去</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	url = git@github.com:ovoCieray/ovoCieray.github.io.git</span><br><span class="line">	url = git@gitee.com:ovoCieray/ovoCieray.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br></pre></td></tr></table></figure>
+
 <p>后面我还remote add了gitee</p>
 <p>可能试的操作有点多，git配置就这样了</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	url = git@github.com:ovoCieray/ovoCieray.github.io.git</span><br><span class="line">	url = git@gitee.com:ovoCieray/ovoCieray.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[remote &quot;gitee&quot;]</span><br><span class="line">	url = git@gitee.com:ovoCieray/ovoCieray.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/gitee/*</span><br></pre></td></tr></table></figure>
+
 <p><a href="https://zhuanlan.zhihu.com/p/346400298#:~:text=%E5%BD%93%E7%84%B6%EF%BC%8C%E4%B8%8A%E8%BF%B0%E5%AE%9E%E4%BE%8B%E5%8F%AA%E6%98%AF%E5%9C%A8GitHub%E5%92%8CGitee%E4%B8%A4%E4%B8%AA%E4%BB%93%E5%BA%93%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81%EF%BC%8C%E9%99%A4%E6%AD%A4%E4%B9%8B%E5%A4%96%E8%BF%98%E5%8F%AF%E4%BB%A5%E5%9C%A8GitLab%E3%80%81Bitbucket%E6%88%96%E6%98%AF%E8%87%AA%E5%B7%B1%E6%90%AD%E5%BB%BA%E7%9A%84Git%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%94%A8%E5%90%8C%E6%A0%B7%E7%9A%84%E6%96%B9%E5%BC%8F%E5%90%8C%E6%AD%A5%E4%BB%A3%E7%A0%81%E3%80%82,%E4%B8%8D%E8%BF%87%EF%BC%8C%E5%BB%BA%E8%AE%AE%E6%A0%B9%E6%8D%AE%E5%85%B7%E4%BD%93%E6%83%85%E5%86%B5%E8%80%8C%E5%AE%9A%EF%BC%8C%E6%9C%80%E5%A5%BD%E4%B8%8D%E8%A6%81%E8%B6%85%E8%BF%87%E4%B8%A4%E4%B8%AA%EF%BC%8C%E4%B8%8D%E7%84%B6%E6%8F%90%E4%BA%A4%E4%BB%93%E5%BA%93%E7%9A%84%E6%97%B6%E5%80%99%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%9B%A0%E4%B8%BA%E7%BD%91%E7%BB%9C%E5%8E%9F%E5%9B%A0%E5%AF%BC%E8%87%B4%E8%80%97%E6%97%B6%E6%AF%94%E8%BE%83%E9%95%BF%E3%80%82">如何将一个项目同时提交到GitHub和Gitee(码云)上 - 知乎 (zhihu.com)</a></p>
 <p>参考了这个，但是我的gitee还是不对orz，不过github好着呢</p>
-<p><a href="https://blog.csdn.net/Qxiaofei_/article/details/124629908">https://blog.csdn.net/Qxiaofei_/article/details/124629908</a><br>
-差点忘记说typora，一个写markdown的，其实vscode也就够了，我用的typora也不算很多的嘿嘿，因为我发现加粗在这个主题不能用（不知道是不是主题的原因）</p>
+<p><a href="https://blog.csdn.net/Qxiaofei_/article/details/124629908">https://blog.csdn.net/Qxiaofei_/article/details/124629908</a><br>差点忘记说typora，一个写markdown的，其实vscode也就够了，我用的typora也不算很多的嘿嘿，因为我发现加粗在这个主题不能用（不知道是不是主题的原因）</p>
 <p>tags后面必须要有空格不然就给你飘红！</p>
 
       </section>
@@ -290,7 +298,7 @@ Gitee的搭建是看的这个，就是里面推的sakura主题不太好改来用
     
     <div class="card-text">
       
-        <a href="/ovoCieray/ovoCieray.github.io/2024/03/19/axios/" itemprop="url">
+        <a href="/2024/03/19/axios/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">axios常用入门</h2>
         </a>
       
@@ -596,7 +604,7 @@ Gitee的搭建是看的这个，就是里面推的sakura主题不太好改来用
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/ovoCieray/ovoCieray.github.io/tags/axios%EF%BC%8Caxios-vue/" style="font-size: 10px;" class="tags-cloud-0">axios，axios+vue</a> <a href="/ovoCieray/ovoCieray.github.io/tags/%E5%9F%BA%E4%BA%8E%E6%95%B0%E6%8D%AE%E7%9A%84%E5%BC%80%E5%8F%91/" style="font-size: 10px;" class="tags-cloud-0">基于数据的开发</a> <a href="/ovoCieray/ovoCieray.github.io/tags/%E6%B2%A1%E6%9C%89%E5%9B%BE%EF%BC%8C%E5%A4%AA%E6%87%92%E4%BA%86/" style="font-size: 10px;" class="tags-cloud-0">没有图，太懒了</a>
+      <a href="/tags/axios%EF%BC%8Caxios-vue/" style="font-size: 10px;" class="tags-cloud-0">axios，axios+vue</a> <a href="/tags/%E5%9F%BA%E4%BA%8E%E6%95%B0%E6%8D%AE%E7%9A%84%E5%BC%80%E5%8F%91/" style="font-size: 10px;" class="tags-cloud-0">基于数据的开发</a> <a href="/tags/%E6%B2%A1%E6%9C%89%E5%9B%BE%EF%BC%8C%E5%A4%AA%E6%87%92%E4%BA%86/" style="font-size: 10px;" class="tags-cloud-0">没有图，太懒了</a>
     </div>
   </div>
 </section>
@@ -733,7 +741,7 @@ Gitee的搭建是看的这个，就是里面推的sakura主题不太好改来用
 
 
 
-<script src="/ovoCieray/ovoCieray.github.io/js/script.js"></script>
+<script src="/js/script.js"></script>
 
 
   
