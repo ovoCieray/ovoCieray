@@ -24,7 +24,7 @@
 
   
 
-  <title>First | Cieray</title>
+  <title>axios | Cieray</title>
 
   
 
@@ -104,15 +104,15 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">First</h1>
+          <h1 class="title-wrap">axios</h1>
           <h2 class="title-sub-wrap">
             <strong>cieray</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-03-19T09:33:48.770Z" itemprop="datePublished">2024-03-19</time>
+            <time  class="article-date" datetime="2024-03-19T12:46:35.000Z" itemprop="datePublished">2024-03-19</time>
           </h2>
           
           
-            <h2 id="/ovoCieray/ovoCieray.github.io/2024/03/19/hello-world/" class="title-sub-wrap leancloud_visitors" data-flag-title="First">
+            <h2 id="/ovoCieray/ovoCieray.github.io/2024/03/19/axios/" class="title-sub-wrap leancloud_visitors" data-flag-title="axios">
               <em>文章访问量</em>
               <i class="leancloud-visitors-count"></i>
             </h2>
@@ -121,6 +121,8 @@
   
 </ul>
           <ul class="wrap-list dark">
+  
+    <li><a href="/ovoCieray/ovoCieray.github.io/tags/axios%EF%BC%8Caxios-vue/">🏷️ axios，axios+vue</a></li>
   
 </ul>
         </div>
@@ -144,25 +146,20 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><p>请求地址：url<br>请求方法：get&#x2F;post<br>请求参数：keyvalue<br>请求：id<br>响应内容（服务端返回）：response</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">axios.get(&quot;url?keyvalue=&quot;+id)</span><br><span class="line">.then(function(response)&#123;</span><br><span class="line"></span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">//请求失败</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">axios.post(&quot;url&quot;,&#123;key:value,key2:vulues2&#125;)</span><br><span class="line">.then(function(response)&#123;</span><br><span class="line"></span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">//请求失败</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="axios-vue"><a href="#axios-vue" class="headerlink" title="axios+vue"></a>axios+vue</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var that = this；</span><br><span class="line">axios.get().then()&#123;&#125;,</span><br><span class="line">funtion(err)&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>axios的回调函数中this指针会变，所以要提前存储</p>
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -173,11 +170,10 @@
           <h2 class="card-text--title text-ellipsis">Vue</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
