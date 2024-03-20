@@ -113,7 +113,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-03-20T02:43:05.306Z" itemprop="dateUpdated">2024-03-20</time>
+              <time  class="article-updated" datetime="2024-03-20T02:51:02.542Z" itemprop="dateUpdated">2024-03-20</time>
             </h2>
           
           
@@ -172,7 +172,9 @@
 
 <p>v-for的默认行为会尝试原地修改元素（就地复用）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li v-for=&quot;(item,index ) in list&quot; :key=&quot;item.id&quot;</span><br><span class="line">		&lt;span&gt;&#123;&#123; item.name &#125;&#125;&lt;/span&gt;</span><br><span class="line">		&lt;span&gt;&#123;&#123; item.author &#125;&#125;&lt;/span&gt;</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<p>vue的diff算法<br>不加key，只删了第一行的文字，删了最后一个li<br>加了key才进行了识别，删了第一个的文字和li<br>！key作用：给元素加唯一的标识，便于Vue进行列表项的正确复用<br>！注意：<br>    1.key的值只能是字符串或数字类型<br>    2.key的值必须具有唯一性<br>    3.推荐使用id作为key，不推荐index（会变化，不对应）</p>
+<p>vue核心&#x3D;&gt;diff算法：计算虚拟dom和原来dom之间的区别，然后在原来dom基础上对虚拟dom进行修改</p>
+<p>不加key，只删了第一行的文字，删了最后一个li<br>加了key才进行了识别，删了第一个的文字和li<br>！key作用：给元素加唯一的标识，便于Vue进行列表项的正确复用<br>！注意：<br>    1.key的值只能是字符串或数字类型<br>    2.key的值必须具有唯一性<br>    3.推荐使用id作为key，不推荐index（会变化，不对应）</p>
+<p>vue核心&#x3D;&gt;虚拟dom：不通过修改dom树，原始js将html转成dom树修改dom树</p>
 <p>指令修饰符:通过”.”一些指令后缀，不同后缀封装了不同的处理操作</p>
 <h2 id="构建用户界面的渐进式框架：基于数据动态渲染页面"><a href="#构建用户界面的渐进式框架：基于数据动态渲染页面" class="headerlink" title="构建用户界面的渐进式框架：基于数据动态渲染页面"></a>构建用户界面的渐进式框架：基于数据动态渲染页面</h2><p>声明式渲染———&gt;组件系统———&gt;客户端路由VueRouter———&gt;大规模状态管理Vuex———&gt;构建工具Webpack&#x2F;Vite</p>
 
