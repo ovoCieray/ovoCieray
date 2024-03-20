@@ -111,6 +111,11 @@
             <time  class="article-date" datetime="2024-03-19T12:46:35.000Z" itemprop="datePublished">2024-03-19</time>
           </h2>
           
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2024-03-20T06:23:12.032Z" itemprop="dateUpdated">2024-03-20</time>
+            </h2>
+          
           
             <h2 id="/2024/03/19/axios/" class="title-sub-wrap leancloud_visitors" data-flag-title="axios常用入门">
               <em>文章访问量</em>
@@ -146,13 +151,31 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-<h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><p>请求地址：url<br>请求方法：get&#x2F;post<br>请求参数：keyvalue<br>请求：id<br>响应内容（服务端返回）：response</p>
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>一般使用create(){<br>
+this.axios<br>
+}</p>
+<h2 id="axios">axios</h2>
+<p>请求地址：url<br>
+请求方法：get/post<br>
+请求参数：keyvalue<br>
+请求：id<br>
+响应内容（服务端返回）：response</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">axios.get(&quot;url?keyvalue=&amp;keyvalues=&quot;+id)</span><br><span class="line">.then(function(response)&#123;</span><br><span class="line"></span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">//请求失败</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">axios.post(&quot;url&quot;,&#123;key:value,key2:vulues2&#125;)</span><br><span class="line">.then(function(response)&#123;</span><br><span class="line"></span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">//请求失败</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="axios-vue"><a href="#axios-vue" class="headerlink" title="axios+vue"></a>axios+vue</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var that = this；</span><br><span class="line">axios.get().then()&#123;&#125;,</span><br><span class="line">funtion(err)&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="axios-vue">axios+vue</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var that = this；</span><br><span class="line">axios.get().then()&#123;&#125;,</span><br><span class="line">funtion(err)&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>axios的回调函数中this指针会变，所以要提前存储</p>
+<p>浏览器进行ajax请求时经常出现的跨域问题，也就是说浏览器的页面内去访问其他服务器上的资源的时候就会出现跨域问题。</p>
+<h6 id="跨域问题">跨域问题</h6>
+<p>跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器对JavaScript施加的安全限制。</p>
+<h6 id="什么是同源？">什么是同源？</h6>
+<p>！！！域名，协议，端口均相同</p>
+<h6 id="如何解决跨域问题">如何解决跨域问题</h6>
+<p>1）cors:跨域资源共享（Cross-Origin Resource sharing）允许浏览器向跨源服务器发出XMLHttpRequest请求。目前所有浏览器都支持该功能，IE不能低于IE10，故只要服务器实现了CORS接口就可以跨源通信（在header中设置&quot;Access-Control-Allow-Origin&quot;，“*”）</p>
+<p>2）使用JSONP（JSON with Padding），利用HTML的script元素的开放策略，抓JavaScript，用直译器执行而不是JSON解析器，需要目标服务器配合一个callback函数</p>
+<p>3）JSONP只支持GET，CORS支持所有类型的HTTP请求（POST,GET,OPTINS,PUT,DELETE,PATCH），JSONP的优势在于支持老式浏览器，以及向不支持CORS的网站请求数据。</p>
+<p>4）Nginx反向代理</p>
+<p>以上跨域问题解决方案都需要服务器支持，当服务器无法设置header或提供callback时可以采用Nginx反向代理</p>
 
       </section>
 
@@ -415,7 +438,7 @@
         <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
 </svg>
-        <span>3</span>
+        <span>5</span>
       </div>
       <div class="count-box--item">
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -427,7 +450,7 @@
         <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
 </svg>
-        2
+        4
       </div>
     </div>
   </div>
@@ -472,7 +495,7 @@
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/tags/axios%EF%BC%8Caxios-vue/" style="font-size: 10px;" class="tags-cloud-0">axios，axios+vue</a> <a href="/tags/%E6%B2%A1%E6%9C%89%E5%9B%BE%EF%BC%8C%E5%A4%AA%E6%87%92%E4%BA%86/" style="font-size: 10px;" class="tags-cloud-0">没有图，太懒了</a>
+      <a href="/tags/axios%EF%BC%8Caxios-vue/" style="font-size: 10px;" class="tags-cloud-0">axios，axios+vue</a> <a href="/tags/vue-router/" style="font-size: 10px;" class="tags-cloud-0">vue-router</a> <a href="/tags/vue2/" style="font-size: 20px;" class="tags-cloud-10">vue2</a> <a href="/tags/%E6%B2%A1%E6%9C%89%E5%9B%BE%EF%BC%8C%E5%A4%AA%E6%87%92%E4%BA%86/" style="font-size: 10px;" class="tags-cloud-0">没有图，太懒了</a>
     </div>
   </div>
 </section>
