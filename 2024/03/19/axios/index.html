@@ -152,26 +152,17 @@
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>一般使用create(){<br>
-this.axios<br>
-}</p>
-<h2 id="axios">axios</h2>
-<p>请求地址：url<br>
-请求方法：get/post<br>
-请求参数：keyvalue<br>
-请求：id<br>
-响应内容（服务端返回）：response</p>
+
+<p>一般使用create(){<br>    this.axios<br>}</p>
+<h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><p>请求地址：url<br>请求方法：get&#x2F;post<br>请求参数：keyvalue<br>请求：id<br>响应内容（服务端返回）：response</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">axios.get(&quot;url?keyvalue=&amp;keyvalues=&quot;+id)</span><br><span class="line">.then(function(response)&#123;</span><br><span class="line"></span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">//请求失败</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">axios.post(&quot;url&quot;,&#123;key:value,key2:vulues2&#125;)</span><br><span class="line">.then(function(response)&#123;</span><br><span class="line"></span><br><span class="line">&#125;,function(err)&#123;</span><br><span class="line">//请求失败</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="axios-vue">axios+vue</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var that = this；</span><br><span class="line">axios.get().then()&#123;&#125;,</span><br><span class="line">funtion(err)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="axios-vue"><a href="#axios-vue" class="headerlink" title="axios+vue"></a>axios+vue</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var that = this；</span><br><span class="line">axios.get().then()&#123;&#125;,</span><br><span class="line">funtion(err)&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>axios的回调函数中this指针会变，所以要提前存储</p>
 <p>浏览器进行ajax请求时经常出现的跨域问题，也就是说浏览器的页面内去访问其他服务器上的资源的时候就会出现跨域问题。</p>
-<h6 id="跨域问题">跨域问题</h6>
-<p>跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器对JavaScript施加的安全限制。</p>
-<h6 id="什么是同源？">什么是同源？</h6>
-<p>！！！域名，协议，端口均相同</p>
-<h6 id="如何解决跨域问题">如何解决跨域问题</h6>
-<p>1）cors:跨域资源共享（Cross-Origin Resource sharing）允许浏览器向跨源服务器发出XMLHttpRequest请求。目前所有浏览器都支持该功能，IE不能低于IE10，故只要服务器实现了CORS接口就可以跨源通信（在header中设置&quot;Access-Control-Allow-Origin&quot;，“*”）</p>
+<h6 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h6><p>跨域，指的是浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器对JavaScript施加的安全限制。</p>
+<h6 id="什么是同源？"><a href="#什么是同源？" class="headerlink" title="什么是同源？"></a>什么是同源？</h6><p>！！！域名，协议，端口均相同</p>
+<h6 id="如何解决跨域问题"><a href="#如何解决跨域问题" class="headerlink" title="如何解决跨域问题"></a>如何解决跨域问题</h6><p>1）cors:跨域资源共享（Cross-Origin Resource sharing）允许浏览器向跨源服务器发出XMLHttpRequest请求。目前所有浏览器都支持该功能，IE不能低于IE10，故只要服务器实现了CORS接口就可以跨源通信（在header中设置”Access-Control-Allow-Origin”，”*”）</p>
 <p>2）使用JSONP（JSON with Padding），利用HTML的script元素的开放策略，抓JavaScript，用直译器执行而不是JSON解析器，需要目标服务器配合一个callback函数</p>
 <p>3）JSONP只支持GET，CORS支持所有类型的HTTP请求（POST,GET,OPTINS,PUT,DELETE,PATCH），JSONP的优势在于支持老式浏览器，以及向不支持CORS的网站请求数据。</p>
 <p>4）Nginx反向代理</p>
