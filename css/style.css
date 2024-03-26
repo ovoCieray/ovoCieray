@@ -222,7 +222,7 @@ table {
   border-collapse: collapse;
 }
 img {
-  max-width: 80%;
+  max-width: 100%;
 }
 a {
   background-color: transparent;
@@ -1122,7 +1122,7 @@ html.show-mobile-nav .navbar-list {
 }
 .markdown-body .figure-image img {
   display: table;
-  max-width: 100%;
+  max-width: 60%;
   height: auto;
   border-radius: var(--soft-small-radius);
 }
