@@ -24,7 +24,7 @@
 
   
 
-  <title>Vue基础 | Cieray</title>
+  <title>django | Cieray</title>
 
   
 
@@ -104,15 +104,15 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Vue基础</h1>
+          <h1 class="title-wrap">django</h1>
           <h2 class="title-sub-wrap">
             <strong>cieray</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-03-20T02:59:07.000Z" itemprop="datePublished">2024-03-20</time>
+            <time  class="article-date" datetime="2024-03-27T16:44:54.000Z" itemprop="datePublished">2024-03-28</time>
           </h2>
           
           
-            <h2 id="/2024/03/20/Vue%E5%9F%BA%E7%A1%80/" class="title-sub-wrap leancloud_visitors" data-flag-title="Vue基础">
+            <h2 id="/2024/03/28/django/" class="title-sub-wrap leancloud_visitors" data-flag-title="django">
               <em>文章访问量</em>
               <i class="leancloud-visitors-count"></i>
             </h2>
@@ -122,7 +122,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/vue2/">🏷️ vue2</a></li>
+    <li><a href="/tags/Django/">🏷️ Django</a></li>
   
 </ul>
         </div>
@@ -146,61 +146,34 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>创建Vue实例，初始化渲染<br>1.准备容器<br>2.引包（包含完整的警告调试）&#x2F;生产版本（删除警告进行压缩）<br>3.创建实例<br>4.添加配置项&#x3D;&gt;完成渲染</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.jsdeliver.net/npm/vue@2.7.14/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el:&#x27;#app&#x27;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            message:&quot;hello Cieray&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>数据的像是处理：数据变化，视图自动更新</p>
-<p>v-text：文本（固定） 插值表达式不能用在标签属性里</p>
-<p>v-html：可以解析HTML</p>
-<p>v-bind： 动态设置标签属性<br>v-bind:属性名&#x3D;”表达式”<br>一般简写:src<br>    如:title&#x3D;”msg”#记得要在data里定义</p>
-<p>v-on：事件修饰符<br>①v-on:事件名&#x3D;“内联语句”<br>②v-on:事件名&#x3D;“methods中的函数名”<br>    如</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=&quot;fn&quot;&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-
-<p>一般简写为@click，@dbclick，还有@keyup.enter监听键盘的回车事件，一般会指定一个方法<br>v-on调用传参 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=&quot;fn(参数1，参数2)&quot;&gt;&lt;/button&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-
-<p>v-model：双向数据绑定，适用表单元素<br>——————快速获取或设置表单元素内容<br>——&gt;数据变化-视图自动更新<br>——&gt;视图变化-数据自动更新</p>
-<p>v-show 和 v-if<br>v-show：切换样式一个属性元素的display:none<br>v-if：修改dom元素控制元素的显示和隐藏（条件渲染，创建或移除元素节点,不需要这个元素了）<br>​   频繁隐藏显示的场景用v-show；v-if操纵dom元素比较复杂耗时</p>
-<p>v-else 和 v-else-if<br>v-if v-else两段渲染<br>v-if v-else-if v-else-if v-else多段渲染<br>！但是v-else必须有v-if<br>v-else-if&#x3D;”表达式”</p>
-<p>v-for：数组、对象、数字关联，与数据绑定，数据改变样式改变<br>v-for:”(item,index) in arrlist”基于数据多次渲染<br>    如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li v-for=&quot;item in list&quot;&gt;</span><br><span class="line">		&#123;&#123;item&#125;&#125;</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-
-<p>v-for的默认行为会尝试原地修改元素（就地复用）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li v-for=&quot;(item,index ) in list&quot; :key=&quot;item.id&quot;</span><br><span class="line">		&lt;span&gt;&#123;&#123; item.name &#125;&#125;&lt;/span&gt;</span><br><span class="line">		&lt;span&gt;&#123;&#123; item.author &#125;&#125;&lt;/span&gt;</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<p>vue核心&#x3D;&gt;diff算法：计算虚拟dom和原来dom之间的区别，然后在原来dom基础上对虚拟dom进行修改</p>
-<p>不加key，只删了第一行的文字，删了最后一个li<br>加了key才进行了识别，删了第一个的文字和li<br>！key作用：给元素加唯一的标识，便于Vue进行列表项的正确复用<br>！注意：<br>    1.key的值只能是字符串或数字类型<br>    2.key的值必须具有唯一性<br>    3.推荐使用id作为key，不推荐index（会变化，不对应）</p>
-<p>vue核心&#x3D;&gt;虚拟dom：不通过修改dom树，原始js将html转成dom树修改dom树</p>
-<p>指令修饰符:通过”.”一些指令后缀，不同后缀封装了不同的处理操作</p>
-<h2 id="构建用户界面的渐进式框架：基于数据动态渲染页面"><a href="#构建用户界面的渐进式框架：基于数据动态渲染页面" class="headerlink" title="构建用户界面的渐进式框架：基于数据动态渲染页面"></a>构建用户界面的渐进式框架：基于数据动态渲染页面</h2><p>声明式渲染———&gt;组件系统———&gt;客户端路由VueRouter———&gt;大规模状态管理Vuex———&gt;构建工具Webpack&#x2F;Vite</p>
-
+        <p>因为博世投了个开发，把python框架django学一下<br>用个简单项目做一下<br>因为装过miniconda，所以还是想用它来装django，不过之前还是忘了配置环境变量，用管理员打开，不用miniconda prompt打开就不行【因为不是全局的，一般装了后识别不了命令就是环境变量的问题】<br>补一下（搜索框搜环境变量就可以直接进入啦）环境变量-》系统变量-》PATH-》添加【D:\miniconda\Library\bin】<br>然后就是建新环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">conda env list\\查看虚拟环境</span><br><span class="line"></span><br><span class="line">\\先把目录转到想装环境的地方再执行命令</span><br><span class="line">conda create -n my_env\\创建一个新的环境</span><br><span class="line"></span><br><span class="line">conda remove -n my_env --all\\移除环境</span><br><span class="line"></span><br><span class="line">activate my_env</span><br><span class="line"></span><br><span class="line">conda list</span><br><span class="line">\\新环境下没有安装任何的package</span><br><span class="line"></span><br><span class="line">conda install django</span><br><span class="line">在新环境下，安装Django以及一些配套安装的package</span><br></pre></td></tr></table></figure>
+<p>到这里就可以转到pycharm了，前提是你是专业版，嘿嘿，我是~</p>
+<p>不过我在这里镜像出问题了，可能是有一点网络问题，试了下镜像感觉是因为清华它们都是htpps，我之前就遇到过</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\\目前conda源都有哪些内容</span><br><span class="line">conda info</span><br><span class="line">\\删除并恢复默认的conda源</span><br><span class="line">conda config --remove-key channels </span><br><span class="line">\\添加指定源</span><br><span class="line">conda config --add channels *\\*指代你要添加的源</span><br><span class="line">\\设置安装包时，显示镜像来源，建议显示</span><br><span class="line">conda config --set show_channel_urls yes </span><br><span class="line">\\删除指定源</span><br><span class="line">conda config --remove channels * \\*代表你要删除的源</span><br></pre></td></tr></table></figure>
+<p>换源也一直不行的话&#x3D;&gt;解决办法<br>修改用户目录下的 .condarc 文件来使用 TUNA 镜像源。Windows 用户无法直接创建名为 .condarc 的文件，可先执行 conda config –set show_channel_urls yes 生成该文件之后再修改<br>然后去C盘用户，我的是【C:\Users\cieray】就在这里面，往下拉，最后面就能找到【.condarc 】，复制下面的粘进去，怕出意外就先复制粘贴一个副本~</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br><span class="line">  deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/</span><br></pre></td></tr></table></figure>
+<p><a href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/">https://mirror.tuna.tsinghua.edu.cn/help/anaconda/</a><br>完美解决！ovo！<br>django环境就装好啦！</p>
+<p>#####进入pycharm<br>新建项目，专业版就可以选django啦！<br>然后选【previously configured interpreter】，建了就要用啊，不然建它干什么~<br>Add Python Interpreter解释器添加我试了好像两种都可以：<br>1）virtualenv Environment就选现有的Existing，然后找我们的环境，就在miniconda目录下的envs里，我新建的env叫djangoenv，就点开它，在目录的一堆文件夹下面有个python.exe和pythonw.exe，选【python.exe】就可以啦~</p>
+<p>2）Conda Environment里要先把miniconda里condabin的conda.bat找到才可以<br>【Conda Executable】选择【D:\miniconda\condabin\conda.bat】找condabin\conda.bat就可以啦<br>然后点击后面的【Load Environments】就会出现【use existing environment】啦，里面就有你创建过的各个环境<br>默认是【D:\miniconda】，下拉选择创建的django环境【djangoenv】！</p>
+<p>Terminal出现了一点问题就是没有进去【djangoenv】环境，在设置里找到Tools-&gt;Terminal，把【Application Settings】的【Shell Path】改为【C:\Windows\System32\cmd.exe】<br>然后-&gt;重启pycharm！over！进来你就会发现你的终端前面就有一个（djangoenv）环境的标识啦！</p>
+<p>还有一个找终端设置的方法，其实多点点就行了，就在终端窗口的“+” 旁边有个展开的符号，然后就能看到setting啦，进去就是ternimal setting！</p>
+<p>然后就可以在终端输入命令创建项目</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp name\\name是项目名称</span><br></pre></td></tr></table></figure>
       </section>
 
       
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2024/03/20/Vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Vue3</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2024/03/19/Github-Gitee-Hexo%E6%90%AD%E5%BB%BABlog/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Github+Gitee+Hexo（Vscode+Typora）搭建Blog</h2>
+        <a href="/2024/03/20/%E8%B7%AF%E7%94%B1/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">路由</h2>
         </a>
       
       <div class="card-text--row">Older</div>
