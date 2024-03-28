@@ -162,6 +162,17 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp name\\name是项目名称</span><br></pre></td></tr></table></figure>
 <p>mysql安装<br><a href="https://blog.csdn.net/weixin_39289696/article/details/128850498">https://blog.csdn.net/weixin_39289696/article/details/128850498</a><br>记得配下环境【C:\Program Files\MySQL\MySQL Server 8.0\bin】</p>
 <p>navicat破解<br><a href="https://blog.csdn.net/weixin_50670076/article/details/136350060">https://blog.csdn.net/weixin_50670076/article/details/136350060</a></p>
+<p>怎么处理图片</p>
+<h5 id="把照片序列化为文本，把文本存储在数据库中（小图片）"><a href="#把照片序列化为文本，把文本存储在数据库中（小图片）" class="headerlink" title="把照片序列化为文本，把文本存储在数据库中（小图片）"></a>把照片序列化为文本，把文本存储在数据库中（小图片）</h5><h5 id="把照片存储在后端文件夹中，把路径存储在数据库中（√）"><a href="#把照片存储在后端文件夹中，把路径存储在数据库中（√）" class="headerlink" title="把照片存储在后端文件夹中，把路径存储在数据库中（√）"></a>把照片存储在后端文件夹中，把路径存储在数据库中（√）</h5><p>1.前端选择照片要上传到后端<br>2.后端生成唯一名字存在后端服务器文件夹（media）<br>3.后端把名字存储到DB<br>4.后端返回照片名给前端<br>5.根据返回的照片名字，组合成照片的URL，绑定到img的SRC属性</p>
+<p>方案1：以当前的日期时间+随机数命名（订单）<br>方案2：使用python的uuid模块</p>
+<h6 id="具体方案"><a href="#具体方案" class="headerlink" title="具体方案"></a>具体方案</h6><p>1.配置media文件夹<br>2.Settings中设定 media</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MEDIA_ROOT= os.path.join(BASE_DIR,&#x27;media/&#x27;)</span><br><span class="line">MEDIA_URL=&#x27;/media/&#x27;</span><br></pre></td></tr></table></figure>
+<p>3.设置URL</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from django.conf import settings</span><br><span class="line">from django.conf.urls.static import static</span><br><span class="line"></span><br><span class="line">urlpattwens += static(settings.MEDIA_URL,</span><br><span class="line">document_rrot = setting.MEDIA_RROT)</span><br></pre></td></tr></table></figure>
+<p>4.完成接口函数代码<br>导入uuid类<br>import uuid<br>导入哈希库<br>import hashlib</p>
+<p>def get_random_str():<br>    # 获取uuid随机数<br>    uuid_val &#x3D; uuid.uuid4()<br>    # 随机字符串<br>    uuid_str &#x3D; str(uuid_val).encode(‘utf-8’)<br>    # md5实例<br>    md5 &#x3D; hashlib.md5()<br>    # 拿取摘要<br>    md5.update(uuid_str)</p>
+<pre><code>return md5.hexdigest()
+</code></pre>
 
       </section>
 

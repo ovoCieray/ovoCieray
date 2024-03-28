@@ -113,7 +113,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-03-20T06:23:12.032Z" itemprop="dateUpdated">2024-03-20</time>
+              <time  class="article-updated" datetime="2024-03-28T07:02:53.863Z" itemprop="dateUpdated">2024-03-28</time>
             </h2>
           
           
@@ -167,6 +167,11 @@
 <p>3）JSONP只支持GET，CORS支持所有类型的HTTP请求（POST,GET,OPTINS,PUT,DELETE,PATCH），JSONP的优势在于支持老式浏览器，以及向不支持CORS的网站请求数据。</p>
 <p>4）Nginx反向代理</p>
 <p>以上跨域问题解决方案都需要服务器支持，当服务器无法设置header或提供callback时可以采用Nginx反向代理</p>
+<p>django中解决跨域<br>通过django-cors-headers解决<br>1.pip install django-cors-headers<br>2.注册到Settings的INSTALL_APPS中<br>‘corsheaders’<br>3.添加到中间件Setting的MIDDLEWAVE中<br>corsheaders.middleware.CorsMiddleware<br>放到scrf的前面<br>‘corsheaders.middleware.CorsMiddleware’,<br>‘django.middleware.csrf.CsrfViewMiddleware’,<br>4.添加允许访问的白名单，凡是出现在白名单的域名都可以访问后端接口<br>CORS_ORIGIN_WHITELIST &#x3D; (‘<a href="http://j92.168.5.11:8080">http://j92.168.5.11:8080</a>‘,)</p>
+<h1 id="设置cores-cookie"><a href="#设置cores-cookie" class="headerlink" title="设置cores cookie"></a>设置cores cookie</h1><p>CORS_ALLOW_CREDENTIALS &#x3D; True</p>
+<p>POST常见数据类格式<br>application&#x2F;x-www-form-urlencoded<br>-&gt;request.POST.get(‘sno’)</p>
+<p>application&#x2F;json<br>-&gt;request.body.decode(“utf-8”)</p>
+<p>multipart&#x2F;form-data<br>text.xml</p>
 
       </section>
 
